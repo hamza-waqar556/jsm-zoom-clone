@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
-import { link } from "fs";
 
 export default function MeetingTypeList() {
   const router = useRouter();
@@ -45,7 +44,7 @@ export default function MeetingTypeList() {
       setCallDetails(call);
 
       if (!values.description) {
-        router.push(`/meeting/${call.id}`);
+        router.push(`/meetings/${call.id}`);
       }
     } catch (error) {
       console.log(error);
